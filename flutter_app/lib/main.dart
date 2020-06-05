@@ -6,30 +6,7 @@ void main() {
   runApp(MaterialApp(
 //  home: Text("Hanlu"),
 //Scaffold like an container
-    home: Scaffold(
-      appBar: AppBar(
-        title: Text("Mr Hanlu"),//Must be an widget
-        centerTitle: true,
-        backgroundColor: Colors.red[600],
-      ),
-
-      body: Center(
-        child:Text("Hello world",
-          style:TextStyle(
-              fontSize: 20.0,
-              fontWeight: FontWeight.bold,
-              letterSpacing: 2.0,
-              color: Colors.grey[600],
-              fontFamily: 'Archi'
-          ) ,
-        ) ,
-      ),
-
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.red[600],
-        child: Text("Button"),
-      ),
-    ),
+    home: Home(),
 
   ));
 }
@@ -61,6 +38,35 @@ class MyApp extends StatelessWidget {
   }
 }
 
+//Stateless:image
+// 有状态： checkbox
+class Home extends StatelessWidget{
+  @override
+  Widget build(BuildContext context) {
+    return  Scaffold(
+      appBar: AppBar(
+        title: Text("Mr Hanlu"),//Must be an widget
+        centerTitle: true,
+        backgroundColor: Colors.red[600],
+      ),
+
+      body: Center(
+        child: Image.network("https://media.mnn.com/assets/images/2015/08/union-wood-sunrise.jpg.653x0_q80_crop-smart.jpg"),
+//        child:Image.asset("images/1.jpg") ,
+//        child:Image(
+////        image: NetworkImage("https://media.mnn.com/assets/images/2015/08/union-wood-sunrise.jpg.653x0_q80_crop-smart.jpg"),
+//        image: AssetImage("images/1.jpg"),
+//        )
+      ),
+
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: Colors.red[600],
+        child: Text("Button"),
+      ),
+    );
+  }
+  
+}
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);
 

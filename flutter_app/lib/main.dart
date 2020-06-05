@@ -51,12 +51,12 @@ class Home extends StatelessWidget{
       ),
 
       body: Center(
-        child: Image.network("https://media.mnn.com/assets/images/2015/08/union-wood-sunrise.jpg.653x0_q80_crop-smart.jpg"),
-//        child:Image.asset("images/1.jpg") ,
-//        child:Image(
-////        image: NetworkImage("https://media.mnn.com/assets/images/2015/08/union-wood-sunrise.jpg.653x0_q80_crop-smart.jpg"),
-//        image: AssetImage("images/1.jpg"),
-//        )
+
+        child: Icon(
+          Icons.add_a_photo,
+          color: Colors.red,
+          size: 100.0,
+        ),
       ),
 
       floatingActionButton: FloatingActionButton(

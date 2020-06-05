@@ -52,11 +52,28 @@ class Home extends StatelessWidget{
 
       body: Center(
 
-        child: Icon(
-          Icons.add_a_photo,
+        child: IconButton(
+        icon: Icon(Icons.add_call),
+          onPressed: (){
+            print("call me");
+          },
           color: Colors.red,
-          size: 100.0,
         ),
+
+
+//        child: RaisedButton.icon(
+//          onPressed: (){
+//          },
+//          icon:Icon( Icons.mail),
+//          label: Text("Mail me"),
+//          color: Colors.red,),
+
+
+//        child: RaisedButton(//or FlagButton
+//          onPressed: (){
+//            print("Take a picture");
+//          },
+//        child: Text("Shutter"),),
       ),
 
       floatingActionButton: FloatingActionButton(
@@ -65,7 +82,7 @@ class Home extends StatelessWidget{
       ),
     );
   }
-  
+
 }
 class MyHomePage extends StatefulWidget {
   MyHomePage({Key key, this.title}) : super(key: key);

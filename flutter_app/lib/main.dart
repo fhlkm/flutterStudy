@@ -50,31 +50,19 @@ class Home extends StatelessWidget{
         backgroundColor: Colors.red[600],
       ),
 
-      body: Center(
+      body: Padding(
+        padding: EdgeInsets.all(60.0),
+        child:Text("Hello Padding") ),
 
-        child: IconButton(
-        icon: Icon(Icons.add_call),
-          onPressed: (){
-            print("call me");
-          },
-          color: Colors.red,
-        ),
-
-
-//        child: RaisedButton.icon(
-//          onPressed: (){
-//          },
-//          icon:Icon( Icons.mail),
-//          label: Text("Mail me"),
-//          color: Colors.red,),
-
-
-//        child: RaisedButton(//or FlagButton
-//          onPressed: (){
-//            print("Take a picture");
-//          },
-//        child: Text("Shutter"),),
-      ),
+//      body: Container(
+//          child: Text("Hello Flutter"),
+//          color: Colors.grey[400],
+//          margin: EdgeInsets.all(50.0),
+////        padding: EdgeInsets.fromLTRB(150.0, 10.0, 30.0, 40.0)
+//          padding: EdgeInsets.symmetric(vertical: 30.0,horizontal: 20)
+//
+//
+//      ),
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red[600],

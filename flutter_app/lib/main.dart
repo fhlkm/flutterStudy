@@ -50,10 +50,17 @@ class Home extends StatelessWidget{
         backgroundColor: Colors.red[600],
       ),
 
-      body: Row(
-        mainAxisAlignment: MainAxisAlignment.center,//horizontal
-        crossAxisAlignment: CrossAxisAlignment.center,//vertical
+      body: Column(
+        //Use the widest object as reference
+        mainAxisAlignment: MainAxisAlignment.center,//same direction
+        crossAxisAlignment: CrossAxisAlignment.center,// opposite direction,
         children: <Widget>[
+          Row(
+            children: <Widget>[
+              Text("First"),
+              Text("Second")
+            ],
+          ),
           Text("Hello"),
           FlatButton(
             onPressed: (){},

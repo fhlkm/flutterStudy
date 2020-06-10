@@ -50,19 +50,23 @@ class Home extends StatelessWidget{
         backgroundColor: Colors.red[600],
       ),
 
-      body: Padding(
-        padding: EdgeInsets.all(60.0),
-        child:Text("Hello Padding") ),
-
-//      body: Container(
-//          child: Text("Hello Flutter"),
-//          color: Colors.grey[400],
-//          margin: EdgeInsets.all(50.0),
-////        padding: EdgeInsets.fromLTRB(150.0, 10.0, 30.0, 40.0)
-//          padding: EdgeInsets.symmetric(vertical: 30.0,horizontal: 20)
-//
-//
-//      ),
+      body: Row(
+        mainAxisAlignment: MainAxisAlignment.center,//horizontal
+        crossAxisAlignment: CrossAxisAlignment.center,//vertical
+        children: <Widget>[
+          Text("Hello"),
+          FlatButton(
+            onPressed: (){},
+            color: Colors.amber,
+            child: Text("Button"),
+          ),
+          Container(
+            color: Colors.red,
+            padding: EdgeInsets.all(30),
+            child: Text("Container"),
+          )
+        ],
+      ),
 
       floatingActionButton: FloatingActionButton(
         backgroundColor: Colors.red[600],

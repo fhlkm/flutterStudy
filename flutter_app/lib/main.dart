@@ -40,7 +40,9 @@ class _HomeState extends State<Home> {
 
 
       body: Column(
+
         crossAxisAlignment: CrossAxisAlignment.start,//alignment
+
         children: datas.map((e) => Text(e)).toList()
       ),
     );

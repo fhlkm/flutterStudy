@@ -15,7 +15,13 @@ void main() {
 
 //Stateless:image
 // 有状态： checkbox
-class Home extends StatelessWidget{
+class Home extends StatefulWidget{
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<Home> {
+  int level=1;
   @override
   Widget build(BuildContext context) {
 
@@ -27,6 +33,15 @@ class Home extends StatelessWidget{
         backgroundColor: Colors.grey[850],
 
       ),
+      floatingActionButton:FloatingActionButton(onPressed: (){
+//        level++;
+        setState(() {
+          level++;
+        });
+      },
+      backgroundColor: Colors.grey[800],
+      child: Icon(Icons.add),) ,
+
       body: Padding(
         padding: const EdgeInsets.fromLTRB(30.0, 40.0, 30.0,40.0),
         child: Column(
@@ -78,6 +93,18 @@ class Home extends StatelessWidget{
             )
             ),
             SizedBox(height: 30.0,),
+            Text("Level", style: TextStyle(
+                color: Colors.grey,
+                letterSpacing: 2.0),
+            ),
+            SizedBox(height: 10.0),// margin between two text
+            Text("$level",style: TextStyle(
+              color: Colors.amberAccent[200],
+              fontWeight: FontWeight.bold,
+              fontSize: 29.0,
+            )
+            ),
+            SizedBox(height: 30.0,),
             Row(
               children:<Widget>[
                 Icon(
@@ -98,6 +125,22 @@ class Home extends StatelessWidget{
       ),
     );
   }
-
 }
+
+//some state
+class Homee extends StatefulWidget {
+  @override
+  _HomeeState createState() => _HomeeState();
+}
+
+class _HomeeState extends State<Homee> {
+  int level=0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
 

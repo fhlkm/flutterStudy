@@ -11,7 +11,11 @@ void main() {
   ));
 }
 
-
+class Datas{
+  String text;
+  String author;
+  Datas({this.text,this.author});
+}
 
 //Stateless:image
 // 有状态： checkbox
@@ -21,10 +25,10 @@ class Home extends StatefulWidget{
 }
 
 class _HomeState extends State<Home> {
-  List<String> datas= [
-    "Hello World",
-    "Hello Flutter",
-    "Hello Mr."
+
+  var myData = Datas(text:"Hello word",author: "Mr Feng");
+  List<Datas> datas= [
+    Datas(text:"Hello word",author: "Mr Feng")
   ];
   @override
   Widget build(BuildContext context) {
@@ -43,7 +47,7 @@ class _HomeState extends State<Home> {
 
         crossAxisAlignment: CrossAxisAlignment.start,//alignment
 
-        children: datas.map((e) => Text(e)).toList()
+        children: datas.map((e) => Text('${e.author}:${e.text}')).toList()
       ),
     );
   }

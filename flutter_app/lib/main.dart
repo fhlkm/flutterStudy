@@ -28,8 +28,38 @@ class _HomeState extends State<Home> {
 
   var myData = Datas(text:"Hello word",author: "Mr Feng");
   List<Datas> datas= [
-    Datas(text:"Hello word",author: "Mr Feng")
+    Datas(text:"Hello word",author: "Mr Feng"),
+    Datas(text:"Hello word",author: "World")
   ];
+
+  Widget dataTemplate(data){
+    return Card(
+      margin: const EdgeInsets.fromLTRB(16.0, 16.0, 16.0, 0.0),
+      child: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.stretch,
+          children: <Widget>[
+          Text(
+          data.text,
+        style: TextStyle(
+        fontSize: 18.0,
+          color: Colors.grey[600],
+        ),
+      ),
+      SizedBox(height: 6.0,),
+      Text(
+        data.author,
+        style: TextStyle(
+          fontSize: 18.0,
+          color: Colors.grey[600],
+        ),
+      ),
+      ],
+    ),
+    ),
+    );
+  }
   @override
   Widget build(BuildContext context) {
 
@@ -45,9 +75,9 @@ class _HomeState extends State<Home> {
 
       body: Column(
 
-        crossAxisAlignment: CrossAxisAlignment.start,//alignment
+          crossAxisAlignment: CrossAxisAlignment.start,//alignment
 
-        children: datas.map((e) => Text('${e.author}:${e.text}')).toList()
+          children: datas.map((data) => dataTemplate(data)).toList()
       ),
     );
   }

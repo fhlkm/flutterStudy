@@ -45,7 +45,11 @@ class _HomeState extends State<Home> {
 
           crossAxisAlignment: CrossAxisAlignment.start,//alignment
 
-          children: datas.map((data) => DataCard(data)).toList()
+          children: datas.map((data) => DataCard(data :data,delete :(){
+            setState(() {
+              datas.remove(data);
+            });
+          })).toList()
       ),
     );
   }

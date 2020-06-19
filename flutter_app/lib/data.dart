@@ -8,8 +8,9 @@ class Datas{
 
 class DataCard extends StatelessWidget {
 
-  Datas data;
-  DataCard(this.data);
+  final Function delete;
+  final Datas data;
+  DataCard({this.data,this.delete});
   @override
   Widget build(BuildContext context) {
     return Card(
@@ -34,6 +35,11 @@ class DataCard extends StatelessWidget {
                 color: Colors.grey[600],
               ),
             ),
+
+            SizedBox(height:8.0),
+            FlatButton.icon(onPressed: delete,
+                icon: Icon(Icons.delete),
+                label: Text("Delete"))
           ],
         ),
       ),

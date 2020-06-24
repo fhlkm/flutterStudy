@@ -9,11 +9,27 @@ class ChooseLocation extends StatefulWidget {
 class _ChooseLocationState extends State<ChooseLocation> {
 
   int counter =0;
+  //async & await to block thread in current block
+    getData() async{
+   String time1 = await Future.delayed(Duration(seconds: 3),(){
+     print("print after 3 seonds");
+     return "3 seconds";
+   });
 
+   String time2 = await Future.delayed(Duration(seconds: 3),(){
+     print("print after 3 seonds");
+     return "3 seconds";
+   });
+
+   print("two wait time is $time1 and $time2");
+   return time1+time2;
+  }
   @override
   void initState() {
     // TODO: implement initState
     super.initState();
+    String data = getData();
+    print("run after getData immediately without blocking");
     print("initState function run");
   }
   @override

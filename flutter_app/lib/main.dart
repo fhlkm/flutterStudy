@@ -11,7 +11,7 @@ void main() {
 //Scaffold like an container
 //    home: Home(),
 
-    initialRoute: "/home",
+    initialRoute: "/",
     routes: {
       "/":(context)=>Loading(),
       "/home":(context)=>Home(),

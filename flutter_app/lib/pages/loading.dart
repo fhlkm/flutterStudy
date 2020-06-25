@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutterapp/services/world_time.dart';
 import 'package:http/http.dart';
 import 'dart:convert';
-
+import 'package:flutter_spinkit/flutter_spinkit.dart';
 
 class Loading extends StatefulWidget {
   @override
@@ -33,8 +33,13 @@ class _LoadingState extends State<Loading> {
   }
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
-      body: SafeArea(child: Text("loading screen $time")),
+      body: Center(
+        child: SpinKitRotatingCircle(
+          color: Colors.blue[400],
+        ),
+      ),
     );
   }
 }

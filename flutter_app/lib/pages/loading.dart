@@ -11,10 +11,16 @@ class _LoadingState extends State<Loading> {
 
   void getData() async{
     print("getData");
-    Response response = await get("https://jsonplaceholder.typicode.com/todos/1");
+    Response response = await get("http://worldtimeapi.org/api/timezone/Asia/Shanghai");
     Map data =jsonDecode(response.body);
-    print('Data is : '+data['title']);
-   
+    String dataTime = data['datetime'];
+    String offSet = data['utc_offset'].substring(1,3);
+    print(dataTime);
+    print(offSet);
+   // create date time
+    DateTime now = DateTime.parse(dataTime);
+    now.add(Duration(hours: int.parse(offSet)));
+    print(now);
   }
 
   @override

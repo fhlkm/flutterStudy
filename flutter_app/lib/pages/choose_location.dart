@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutterapp/services/world_time.dart';
 class ChooseLocation extends StatefulWidget {
   @override
   _ChooseLocationState createState() => _ChooseLocationState();
@@ -9,6 +10,10 @@ class ChooseLocation extends StatefulWidget {
 class _ChooseLocationState extends State<ChooseLocation> {
 
   int counter =0;
+  List<WorldTime>  locations = [
+    WorldTime(url: "Asia/Shanghai",location: "Beijing",flag:"china.png"),
+    WorldTime(url: "Europe/London",location: "London",flag:"uk.png")
+  ];
   //async & await to block thread in current block
 
   @override
@@ -29,14 +34,26 @@ class _ChooseLocationState extends State<ChooseLocation> {
         centerTitle: true,
         elevation: 0,
       ),
-      body: RaisedButton(
-        onPressed: (){
-          setState(() {
-            counter++;
-          });
-        },
-        child: Text("counter is $counter"),
-      ),
+      body: ListView.builder(itemBuilder: (context,index){
+        return Padding(
+          padding: const EdgeInsets.symmetric(vertical: 1.0,horizontal: 4.0),
+          child: Card(
+            child: ListTile(
+              onTap:(){
+                print(locations[index].location);
+
+              },
+              title: Text(locations[index].location),
+              leading: CircleAvatar(
+                backgroundImage: AssetImage('images/${locations[index].flag}'),
+              ),
+
+            ),
+          ),
+        );
+      },
+      itemCount: locations.length,
+      )
     );
   }
 

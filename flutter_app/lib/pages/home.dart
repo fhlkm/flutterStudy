@@ -9,7 +9,9 @@ class _HomeState extends State<Home> {
   Map data = {};
   @override
   Widget build(BuildContext context) {
-    //get Parameter from previous mage
+    //get Parameter from previous screen
+    //ModalRoute.of(context).settings.arguments only get data from (pushNamed() in loading screen), can't get data from pop
+
     data = data.isNotEmpty ?data: ModalRoute.of(context).settings.arguments;
     print(data);
     //set background image

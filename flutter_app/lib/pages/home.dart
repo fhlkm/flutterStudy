@@ -9,7 +9,8 @@ class _HomeState extends State<Home> {
   Map data = {};
   @override
   Widget build(BuildContext context) {
-    data = ModalRoute.of(context).settings.arguments;
+    //get Parameter from previous mage
+    data = data.isNotEmpty ?data: ModalRoute.of(context).settings.arguments;
     print(data);
     //set background image
     String bgImage = data['isDaytime']?'day.png':'night.png';
@@ -28,8 +29,18 @@ class _HomeState extends State<Home> {
             padding: const EdgeInsets.fromLTRB(0, 120.0, 0, 0),
             child: Column(
               children: <Widget>[
-                FlatButton.icon(onPressed: (){
-                  Navigator.pushNamed(context, "/location");
+                FlatButton.icon(onPressed: () async {
+                  dynamic result = await Navigator.pushNamed(context, "/location");
+                  if(result != null ){
+                    setState(() {// set State was triggered, build will run again
+                      data = {
+                        'location':result['location'],// result is a map
+                        'flag':result['location'],
+                        'time':result['time'],
+                        'isDaytime':result['isDaytime']
+                      };
+                    });
+                  }
                 },
                     icon: Icon(Icons.edit_location,
                     color: Colors.blue,),

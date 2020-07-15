@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MyApp());
 
+  /**************First class**********************/
   print('Hello world');
   // String 连接
   String firstName ="Hanlu";
@@ -10,6 +11,10 @@ void main() {
   print(firstName+lastName);
   //different variable type
   print(firstName+"${firstName.length}");
+  /**************Second class**********************/
+  //??
+  print(null??"previous is empty");
+  //
 
 }
 //variable, and variable type

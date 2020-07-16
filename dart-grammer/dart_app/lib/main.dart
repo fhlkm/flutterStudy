@@ -14,6 +14,38 @@ void main() {
   /**************Second class**********************/
   //??
   print(null??"previous is empty");
+  /**************third class**********************/
+  List people =['henry','bucky'];
+  for(int i=0;i <people.length;i++){
+    print(people[i]);
+  }
+  for(String name in people){
+    print(name);
+  }
+  //指定停止某个循环
+  outerloop:
+  for(int i=0;i<3;i++){
+    innerloop:
+    for(int j=1;j<3;j++){
+      print(" $i $j");
+
+      if(i ==2 && j==2){
+        break outerloop;
+      }
+    }
+  }
+  //指定停止某个循环
+  outerloop:
+  for(int i=0;i<3;i++){
+    innerloop:
+    for(int j=1;j<3;j++){
+
+      if(i ==2 && j==2){
+        continue outerloop;
+      }
+      print(" $i $j");
+    }
+  }
   //
 
 }

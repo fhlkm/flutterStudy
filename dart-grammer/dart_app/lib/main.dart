@@ -48,12 +48,51 @@ void main() {
   }
   //
 
+
+
+
+
+
+
 }
-//variable, and variable type
-int score =23;
-//String '' and  " "
 
+/**************four class**********************/
 
+/***********函数传参****************/
+
+/***********函数返回值****************/
+    //函数有默认返回值null
+    /***********箭头函数****************/
+
+    //void sum(int a ,int b)=>print('${a+b}');
+    int sum(int a ,int b)=>a+b;
+
+/***********函数参数****************/
+//    void printCities(String name1,String name2,String name3){
+//      print("name1 is ${name1}");
+//      print("name2 is ${name2}");
+//      print("name3 is ${name3}");
+//    }
+
+//    void printCities(String name1,[String name2, String name3]){
+//          print("name1 is $name1");
+//          print("name2 is $name2");
+//          print("name3 is $name3");
+//        }
+/***********函数参数命名****************/
+
+//  void findVolume(int length, {int height, int width}){
+//    print("length is $length");
+//    print("height is $height");
+//    print("width  is $width");
+//  }
+//
+//
+//  void findVolume(int length, {int height=20, int width=30}){
+//    print("length is $length");
+//    print("height is $height");
+//    print("width  is $width");
+//  }
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

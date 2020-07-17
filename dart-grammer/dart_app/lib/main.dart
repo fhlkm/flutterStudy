@@ -1,131 +1,32 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(MyApp());
+//  runApp(MyApp());
 
-  /**************First class**********************/
-  print('Hello world');
-  // String 连接
-  String firstName ="Hanlu";
-  String lastName ="feng";
-  print(firstName+lastName);
-  //different variable type
-  print(firstName+"${firstName.length}");
-  /**************Second class**********************/
-  //??
-  print(null??"previous is empty");
-  /**************third class**********************/
-  List people =['henry','bucky'];
-  for(int i=0;i <people.length;i++){
-    print(people[i]);
-  }
-  for(String name in people){
-    print(name);
-  }
-  //指定停止某个循环
-  outerloop:
-  for(int i=0;i<3;i++){
-    innerloop:
-    for(int j=1;j<3;j++){
-      print(" $i $j");
-
-      if(i ==2 && j==2){
-        break outerloop;
-      }
-    }
-  }
-  //指定停止某个循环
-  outerloop:
-  for(int i=0;i<3;i++){
-    innerloop:
-    for(int j=1;j<3;j++){
-
-      if(i ==2 && j==2){
-        continue outerloop;
-      }
-      print(" $i $j");
-    }
-  }
-  //
-
-
-
-
-
-
-
+var student = Student();
+print("{student.name}");
 }
 
-/**************four class**********************/
 
-/***********函数传参****************/
+class Student{
+  int id;
+  String name;
 
-/***********函数返回值****************/
-    //函数有默认返回值null
-    /***********箭头函数****************/
-
-    //void sum(int a ,int b)=>print('${a+b}');
-    int sum(int a ,int b)=>a+b;
-
-/***********函数参数****************/
-//    void printCities(String name1,String name2,String name3){
-//      print("name1 is ${name1}");
-//      print("name2 is ${name2}");
-//      print("name3 is ${name3}");
-//    }
-
-//    void printCities(String name1,[String name2, String name3]){
-//          print("name1 is $name1");
-//          print("name2 is $name2");
-//          print("name3 is $name3");
-//        }
-/***********函数参数命名****************/
-
-//  void findVolume(int length, {int height, int width}){
-//    print("length is $length");
-//    print("height is $height");
-//    print("width  is $width");
+  //无body构造函数
+  Student(this.id,  this.name);
+  
+  //自定义构造函数
+//  Student.myCustomConstructor(){
+//    print("Student.myCustomConstructor");
 //  }
-//
-//
-//  void findVolume(int length, {int height=20, int width=30}){
-//    print("length is $length");
-//    print("height is $height");
-//    print("width  is $width");
-//  }
-/***********Try catch on finally***************/
-// on :当你需要指定异常类型的时候用
- void errorCatch(){
-  try{
-
-    var result =12/0;
-  }on IntegerDivisionByZeroException{
-    print ("can not divide by 0");
-  }
 
 
-  try{
+  Student.myCustomConstructor(this.id,  this.name);
+  void study(){
 
-    var result =12/0;
-  }catch(e, s){
-    print ("The exception throw is $e");
-    print("stack trace \n $s");
   }
 
 }
-
-class DepostException implements Exception{
-  String errorMsg(){
-    return "no less than 0";
-  }
-}
-
-
-void depositMoney(int amount){
-  if(amount<0)
-    throw new DepostException();
-}
-/***********Try catch on finally end***************/
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

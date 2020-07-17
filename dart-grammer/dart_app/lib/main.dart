@@ -93,6 +93,39 @@ void main() {
 //    print("height is $height");
 //    print("width  is $width");
 //  }
+/***********Try catch on finally***************/
+// on :当你需要指定异常类型的时候用
+ void errorCatch(){
+  try{
+
+    var result =12/0;
+  }on IntegerDivisionByZeroException{
+    print ("can not divide by 0");
+  }
+
+
+  try{
+
+    var result =12/0;
+  }catch(e, s){
+    print ("The exception throw is $e");
+    print("stack trace \n $s");
+  }
+
+}
+
+class DepostException implements Exception{
+  String errorMsg(){
+    return "no less than 0";
+  }
+}
+
+
+void depositMoney(int amount){
+  if(amount<0)
+    throw new DepostException();
+}
+/***********Try catch on finally end***************/
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

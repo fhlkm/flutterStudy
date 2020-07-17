@@ -3,30 +3,45 @@ import 'package:flutter/material.dart';
 void main() {
 //  runApp(MyApp());
 
-var student = Student();
-print("{student.name}");
+  Person p;
+  p.printInfo(); // 报错
+
+  p?.printInfo();
+
+  print(p is Person); // true
+  print(p is Object); // true
+
+  (p as Person).printInfo();// as 类型转换
+  //".."的用法
+
+  Person p1 = new Person('Hiraku', 29);
+  p1.printInfo(); // Hiraku--29
+
+  p1.name = '马红琴';
+  p1.age = 18;
+  p1.printInfo(); // 马红琴--18
+
+  //'..'省略了调用重写对象
+  p1..name = '马红琴'
+  ..age = 18
+  ..printInfo(); // 马红琴--18
+
+
+
 }
 
-
-class Student{
-  int id;
+class Person {
   String name;
+  int age;
+  Person(this.name, this.age);
 
-  //无body构造函数
-  Student(this.id,  this.name);
-  
-  //自定义构造函数
-//  Student.myCustomConstructor(){
-//    print("Student.myCustomConstructor");
-//  }
-
-
-  Student.myCustomConstructor(this.id,  this.name);
-  void study(){
-
+  printInfo() {
+    print('${this.name}--${this.age}');
   }
-
 }
+
+
+
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.

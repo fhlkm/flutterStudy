@@ -5,7 +5,7 @@ import 'pages/choose_location.dart';
 
 
 void main() {
-  
+
 //  runApp(MyApp());
   runApp(MaterialApp(
 //  home: Text("Hanlu"),
@@ -45,6 +45,7 @@ test1() async {
   _t1.clear();
 }
 
+//Flutter event queue with http &I/0?
 /****************Async has problem*************************/
 //test() {
 //  print('=============================>');

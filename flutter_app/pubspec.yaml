@@ -23,6 +23,9 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  # sqlite database
+  sqflite:
+  path:
   http: ^0.12.1
   intl: ^0.16.1
   flutter_spinkit: ^4.1.2
